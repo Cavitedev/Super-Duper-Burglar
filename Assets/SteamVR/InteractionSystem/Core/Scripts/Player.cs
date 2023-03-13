@@ -257,7 +257,8 @@ namespace Valve.VR.InteractionSystem
 				trackingOriginTransform = this.transform;
 			}
 
-#if OPENVR_XR_API && UNITY_LEGACY_INPUT_HELPERS
+			// 
+#if  OPENVR_XR_API && UNITY_LEGACY_INPUT_HELPERS 
 			if (hmdTransforms != null)
 			{
 				foreach (var hmd in hmdTransforms)

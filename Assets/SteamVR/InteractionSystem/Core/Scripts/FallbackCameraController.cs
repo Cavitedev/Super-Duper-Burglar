@@ -31,6 +31,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void Update()
 		{
+
 			float forward = 0.0f;
 			if ( Input.GetKey( KeyCode.W ) || Input.GetKey( KeyCode.UpArrow ) )
 			{
@@ -40,18 +41,18 @@ namespace Valve.VR.InteractionSystem
 			{
 				forward -= 1.0f;
 			}
-
-            float up = 0.0f;
-            if (Input.GetKey(KeyCode.E))
-            {
-                up += 1.0f;
-            }
-            if (Input.GetKey(KeyCode.Q))
-            {
-                up -= 1.0f;
-            }
-
-            float right = 0.0f;
+			
+			         float up = 0.0f;
+			         if (Input.GetKey(KeyCode.E))
+			         {
+			             up += 1.0f;
+			         }
+			         if (Input.GetKey(KeyCode.Q))
+			         {
+			             up -= 1.0f;
+			         }
+			
+			         float right = 0.0f;
 			if ( Input.GetKey( KeyCode.D ) || Input.GetKey( KeyCode.RightArrow ) )
 			{
 				right += 1.0f;
@@ -60,29 +61,30 @@ namespace Valve.VR.InteractionSystem
 			{
 				right -= 1.0f;
 			}
-
+			
 			float currentSpeed = speed;
 			if ( Input.GetKey( KeyCode.LeftShift ) || Input.GetKey( KeyCode.RightShift ) )
 			{
 				currentSpeed = shiftSpeed;
 			}
-
+			
 			float realTimeNow = Time.realtimeSinceStartup;
 			float deltaRealTime = realTimeNow - realTime;
 			realTime = realTimeNow;
-
+			
 			Vector3 delta = new Vector3( right, up, forward ) * currentSpeed * deltaRealTime;
 
+			
 			transform.position += transform.TransformDirection( delta );
-
+			
 			Vector3 mousePosition = Input.mousePosition;
-
+			
 			if ( Input.GetMouseButtonDown( 1 ) /* right mouse */)
 			{
 				startMousePosition = mousePosition;
 				startEulerAngles = transform.localEulerAngles;
 			}
-
+			
 			if ( Input.GetMouseButton( 1 ) /* right mouse */)
 			{
 				Vector3 offset = mousePosition - startMousePosition;
