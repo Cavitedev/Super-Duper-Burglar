@@ -176,8 +176,8 @@
                },
                "mode" : "dpad",
                "parameters" : {
-                  "deadzone_pct" : "90",
-                  "overlap_pct" : "15",
+                  "deadzone_pct" : "40",
+                  "overlap_pct" : "0",
                   "sub_mode" : "click"
                },
                "path" : "/user/hand/right/input/trackpad"
