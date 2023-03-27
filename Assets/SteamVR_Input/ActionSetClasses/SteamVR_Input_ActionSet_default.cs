@@ -113,6 +113,22 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean Crouch
+        {
+            get
+            {
+                return SteamVR_Actions.default_Crouch;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean StandUp
+        {
+            get
+            {
+                return SteamVR_Actions.default_StandUp;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get
