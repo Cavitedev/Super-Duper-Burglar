@@ -9,6 +9,8 @@ namespace Project.Scripts
 {
     public class PlayerMovement : MonoBehaviour
     {
+        public Transform playerTransform;
+        
         public SteamVR_Action_Vector2 moveValue;
         public float maxSpeed;
         public float sensitivity;
@@ -80,18 +82,31 @@ namespace Project.Scripts
 
             Vector3 point1 = PositionWihoutCrouch();
             Vector3 point2 = PositionWihoutCrouch();
-            point1.y -= height/2;
+            point1.y = 0.01f;
             point2.y += height/2;
+
+            point1 -= direction * distance;
+            point2 -= direction * distance;
+
+            CapsuleCollider capsuleCollider = GetComponent<CapsuleCollider>();
+            capsuleCollider.radius = radious;
+            capsuleCollider.height = height;
+            capsuleCollider.center = new Vector3(0, point1.y,0);
+            
+            
+            Debug.Log($"({point1}; {point2})");
+            Debug.DrawLine(point1, point2);
 
             int maskNumber = LayerMask.NameToLayer("Obstacles");
             int maskFilter = 1 << maskNumber;
+            
             if (Physics.CapsuleCast(point1, point2, radious, direction, out hit, distance, maskFilter))
             {
-                // Debug.Log("obstable " + hit.transform.gameObject.name + " layer: " + hit.transform.gameObject.layer);
+                Debug.Log("obstable " + hit.transform.gameObject.name + " layer: " + hit.transform.gameObject.layer);
                 return true;
             }
 
-            // Debug.Log("Mover");
+            Debug.Log("Mover");
             return false;
         }
 
@@ -109,13 +124,18 @@ namespace Project.Scripts
 
         private Vector3 PositionWihoutCrouch()
         {
+            Vector3 ret;
             if (isCrouched)
             {
-                return transform.position;
+                ret = playerTransform.position ;
+            }
+            else
+            {
+                ret = playerTransform.position + crouchDistance * Vector3.up ;
             }
 
-            return transform.position + crouchDistance * Vector3.up;
-            
+            return ret;
+
         }
     }
 }
