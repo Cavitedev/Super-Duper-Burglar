@@ -88,25 +88,25 @@ namespace Project.Scripts
             point1 -= direction * distance;
             point2 -= direction * distance;
 
-            CapsuleCollider capsuleCollider = GetComponent<CapsuleCollider>();
-            capsuleCollider.radius = radious;
-            capsuleCollider.height = height;
-            capsuleCollider.center = new Vector3(0, point1.y,0);
+            // CapsuleCollider capsuleCollider = GetComponent<CapsuleCollider>();
+            // capsuleCollider.radius = radious;
+            // capsuleCollider.height = height;
+            // capsuleCollider.center = new Vector3(0, point1.y,0);
             
             
-            Debug.Log($"({point1}; {point2})");
-            Debug.DrawLine(point1, point2);
+            // Debug.Log($"({point1}; {point2})");
+            // Debug.DrawLine(point1, point2);
 
             int maskNumber = LayerMask.NameToLayer("Obstacles");
             int maskFilter = 1 << maskNumber;
             
             if (Physics.CapsuleCast(point1, point2, radious, direction, out hit, distance, maskFilter))
             {
-                Debug.Log("obstable " + hit.transform.gameObject.name + " layer: " + hit.transform.gameObject.layer);
+                // Debug.Log("obstable " + hit.transform.gameObject.name + " layer: " + hit.transform.gameObject.layer);
                 return true;
             }
 
-            Debug.Log("Mover");
+            // Debug.Log("Mover");
             return false;
         }
 
