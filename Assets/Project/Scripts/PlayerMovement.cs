@@ -10,7 +10,7 @@ namespace Project.Scripts
     public class PlayerMovement : MonoBehaviour
     {
         public Transform playerTransform;
-        
+
         public SteamVR_Action_Vector2 moveValue;
         public float maxSpeed;
         public float sensitivity;
@@ -22,6 +22,8 @@ namespace Project.Scripts
 
         public SteamVR_Action_Boolean crouch = SteamVR_Input.GetBooleanAction("Crouch");
         public SteamVR_Action_Boolean standUp = SteamVR_Input.GetBooleanAction("StandUp");
+
+        private Vector3 _lastPos;
 
         [Header("Debug")]
         public bool debugMode = false;
@@ -73,7 +75,21 @@ namespace Project.Scripts
                 {
                     transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
                 }
+                
+                
             }
+            
+            if (TooCloseObstacle())
+            {
+                Vector3 direction = (_lastPos - playerTransform.position).normalized;
+                transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up); 
+            }
+            else
+            {
+                _lastPos = playerTransform.position;
+            }
+
+            
         }
 
         private bool AnyObstacleInDirection(Vector3 direction)
@@ -109,6 +125,23 @@ namespace Project.Scripts
             // Debug.Log("Mover");
             return false;
         }
+
+        private bool TooCloseObstacle()
+        {
+
+            Vector3 point2 = PositionWihoutCrouch();
+            point2.y -= height/2;
+            
+            int maskNumber = LayerMask.NameToLayer("Obstacles");
+            int maskFilter = 1 << maskNumber;
+            
+            if (Physics.CheckSphere(point2, radious, maskFilter))
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         private void Crouch()
         {
