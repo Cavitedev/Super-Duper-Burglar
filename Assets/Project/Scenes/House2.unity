@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11313474, g: 0.11799512, b: 0.10406165, a: 1}
+  m_IndirectSpecularColor: {r: 0.11313318, g: 0.1179934, b: 0.10406056, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2041,21 +2041,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 635b559c754cc8341b32a152e4059ce9, type: 3}
   m_PrefabInstance: {fileID: 537490285}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &651328164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651328161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &651328165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3830,21 +3815,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e4cc1467e2788fa4cac37f127450157c, type: 3}
   m_PrefabInstance: {fileID: 1149428768}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1149428772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849591199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1149428773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,21 +4010,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &1153496907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153496904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!1001 &1158318793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4287,7 +4242,6 @@ GameObject:
   - component: {fileID: 1172649527}
   - component: {fileID: 1172649530}
   - component: {fileID: 1172649529}
-  - component: {fileID: 1172649528}
   m_Layer: 0
   m_Name: Interactuable
   m_TagString: Untagged
@@ -4318,21 +4272,6 @@ Transform:
   m_Father: {fileID: 2025140100}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1172649528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172649526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1172649529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5057,7 +4996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509588483158919676, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4509588483158919676, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5374,21 +5313,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c6559dc7184f6844ba0fde53236e97e6, type: 3}
   m_PrefabInstance: {fileID: 1477106851}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1477106855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554760238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1477106856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5714,21 +5638,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 824c8db400013dd4bb682dbbe289f48a, type: 3}
   m_PrefabInstance: {fileID: 1523856880}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1523856883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523856882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1523856884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5803,21 +5712,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c4eec42cfc85c749be391e82aceb875, type: 3}
   m_PrefabInstance: {fileID: 1173395911}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1578214921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578214917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1578214922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5944,21 +5838,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e9bffd5ceb3415b40b0b7dcae0ae6a03, type: 3}
   m_PrefabInstance: {fileID: 1665497268}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1665497272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336116825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1665497273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6249,21 +6128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ea3d2a5bf18aa84284124fe246a65b1, type: 3}
   m_PrefabInstance: {fileID: 1328474851}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1749437543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749437540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &1749437544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7145,21 +7009,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3c8436bd2348474a824d0baa0786aa9, type: 3}
   m_PrefabInstance: {fileID: 2055529137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2055529141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454051976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9074cce04a18b2949a9b06bb51db35d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openRotation: {x: 0, y: 0, z: 0}
-  closedRotation: {x: 0, y: 0, z: 0}
-  ObjectToRotate: {fileID: 0}
 --- !u!114 &2055529142
 MonoBehaviour:
   m_ObjectHideFlags: 0
