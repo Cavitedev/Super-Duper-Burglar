@@ -16,6 +16,8 @@ public class LaserPointer : SteamVR_LaserPointer
     
     public void Deactivate()
     {
+        if (pointer == null)
+            return;
         pointer.SetActive(false);
         _ignoreInmediateInteraction = true;
     }

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initializeSteamVROnAwake: 1
-  doNotDestroy: 1
+  doNotDestroy: 0
   steamvr_render: {fileID: 0}
 --- !u!114 &4509588483148920440
 MonoBehaviour:
@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 4509588483148950502}
   - component: {fileID: 4539704003562142648}
   - component: {fileID: 4539704003971994388}
+  - component: {fileID: 419541110}
   m_Layer: 26
   m_Name: LeftHand
   m_TagString: Untagged
@@ -651,6 +652,30 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
+--- !u!114 &419541110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509588483159207752}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ed5f65de679f640a79d20eaad63a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: {fileID: 0}
+  interactWithUI:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
+  clickColor: {r: 0, g: 1, b: 0, a: 1}
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
 --- !u!1 &4509588483159224186
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +688,7 @@ GameObject:
   - component: {fileID: 4509588483149032312}
   - component: {fileID: 4539704003146606138}
   - component: {fileID: 4539703959749796658}
+  - component: {fileID: 316645415}
   m_Layer: 26
   m_Name: RightHand
   m_TagString: Untagged
@@ -791,6 +817,30 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
+--- !u!114 &316645415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509588483159224186}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ed5f65de679f640a79d20eaad63a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: {fileID: 0}
+  interactWithUI:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
+  clickColor: {r: 0, g: 1, b: 0, a: 1}
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
 --- !u!1 &4509588483159230294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1168,7 @@ GameObject:
   - component: {fileID: 4509588483158919676}
   - component: {fileID: 4509588483148966128}
   - component: {fileID: 4509588483775605749}
+  - component: {fileID: 1631688102}
   m_Layer: 0
   m_Name: Our Player
   m_TagString: Untagged
@@ -1206,6 +1257,20 @@ MonoBehaviour:
     needsReinit: 0
   debugMode: 0
   debugDirection: {x: 0, y: 1}
+--- !u!114 &1631688102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509588483159243140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c757eefc1be94ab187a565e308187cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightLaserPointer: {fileID: 316645415}
+  leftLaserPointer: {fileID: 419541110}
 --- !u!1 &4509588483159244778
 GameObject:
   m_ObjectHideFlags: 0

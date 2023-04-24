@@ -9,6 +9,7 @@
         public LaserPointer rightLaserPointer;
         public LaserPointer leftLaserPointer;
 
+        public bool enabled = true;
 
         private SteamVR_LaserPointer[] _laserPointers;
         
@@ -26,8 +27,24 @@
             
         }
 
+        private void Start()
+        {
+            if (enabled)
+            {
+                Activate();
+            }
+            else
+            {
+                Deactivate();
+            }
+        }
+
         private void Update()
         {
+            if (!enabled)
+            {
+                return;
+            }
             UpdateActiveController();
         }
 
@@ -49,6 +66,22 @@
                 leftLaserPointer.Deactivate();
                 leftLaserPointer.enabled = false;
             }
+        }
+
+        private void Deactivate()
+        {
+            leftLaserPointer.Deactivate();
+            rightLaserPointer.Deactivate();
+            leftLaserPointer.enabled = false;
+            rightLaserPointer.enabled = false;
+        }
+        
+        private void Activate()
+        {
+            leftLaserPointer.Activate();
+            rightLaserPointer.Activate();
+            leftLaserPointer.enabled = true;
+            rightLaserPointer.enabled = true;
         }
 
         public void PointerClick(object sender, PointerEventArgs e)

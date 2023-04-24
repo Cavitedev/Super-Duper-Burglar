@@ -34,7 +34,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 3
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
@@ -123,64 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &316645405 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4509588483159224186, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
-  m_PrefabInstance: {fileID: 2141099721}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &316645415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316645405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ed5f65de679f640a79d20eaad63a51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pose: {fileID: 0}
-  interactWithUI:
-    actionPath: /actions/default/in/InteractUI
-    needsReinit: 0
-  active: 1
-  color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0.002
-  clickColor: {r: 0, g: 1, b: 0, a: 1}
-  holder: {fileID: 0}
-  pointer: {fileID: 0}
-  addRigidBody: 0
-  reference: {fileID: 0}
---- !u!1 &419541099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4509588483159207752, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
-  m_PrefabInstance: {fileID: 2141099721}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &419541110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419541099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ed5f65de679f640a79d20eaad63a51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pose: {fileID: 0}
-  interactWithUI:
-    actionPath: /actions/default/in/InteractUI
-    needsReinit: 0
-  active: 1
-  color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0.002
-  clickColor: {r: 0, g: 1, b: 0, a: 1}
-  holder: {fileID: 0}
-  pointer: {fileID: 0}
-  addRigidBody: 0
-  reference: {fileID: 0}
 --- !u!1 &497537940
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,25 +692,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 160, y: 30, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1631688098 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4509588483159243140, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
-  m_PrefabInstance: {fileID: 2141099721}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1631688102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631688098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c757eefc1be94ab187a565e308187cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightLaserPointer: {fileID: 316645415}
-  leftLaserPointer: {fileID: 419541110}
 --- !u!1 &1692411053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1041,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316645415, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419541110, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4509588483158919676, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1165,18 +1096,6 @@ PrefabInstance:
     - target: {fileID: 4509588483159243140, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: m_Name
       value: Our Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4509588483160482534, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4509588483160482534, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539704005037765078, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
-      propertyPath: doNotDestroy
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
