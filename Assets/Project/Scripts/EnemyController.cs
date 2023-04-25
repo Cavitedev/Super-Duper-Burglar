@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public float detectionRadius = 10.0f;
     public float detectionAngle = 90.0f;
 
-    public bool inRange = false;
+    public bool inRange = false, reverse_path = false;
     private Transform playerTransform;
 
     private void Start()
@@ -59,13 +59,30 @@ public class EnemyController : MonoBehaviour
             Vector3 toPoint = pathPoints[currentPoint].position - enemyPosition;
             toPoint.y = 0;
             
-            if (toPoint.magnitude <= detectionRadius)
+            if (toPoint.magnitude <= detectionRadius / 2)
             {
                 if (Vector3.Dot(toPoint.normalized, transform.forward) >
                     Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad))
                 {
-                    currentPoint = (currentPoint + 1) % pathPoints.Length;
-                    agent.SetDestination(pathPoints[currentPoint].position);
+                    if(reverse_path == false)
+                    {
+                        currentPoint = currentPoint + 1;
+                        agent.SetDestination(pathPoints[currentPoint].position);
+                    }
+                    else
+                    {
+                        currentPoint = currentPoint - 1;
+                        agent.SetDestination(pathPoints[currentPoint].position);
+                    }
+
+                    if(currentPoint == pathPoints.Length - 1)
+                    {
+                        reverse_path = true;
+                    }
+                    if(currentPoint == 0)
+                    {
+                        reverse_path = false;
+                    }
                     Debug.Log("Point has been detected!");
                 }
             }
@@ -112,6 +129,7 @@ public class EnemyController : MonoBehaviour
             {
                 _timeUntilLost = 0f;
                 inRange = false;
+                agent.SetDestination(pathPoints[currentPoint].position);
                 return null;
             }
             else //Aun sabe donde esta el jugador
