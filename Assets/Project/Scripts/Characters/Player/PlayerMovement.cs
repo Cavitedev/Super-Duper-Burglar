@@ -1,12 +1,9 @@
-﻿using System;
+﻿
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-namespace Project.Scripts
-{
     public class PlayerMovement : MonoBehaviour
     {
         public Transform playerTransform;
@@ -171,4 +168,3 @@ namespace Project.Scripts
 
         }
     }
-}

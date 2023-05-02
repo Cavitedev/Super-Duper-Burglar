@@ -24,8 +24,11 @@ public class EnemyController : MonoBehaviour
     public bool inRange = false, reverse_path = false;
     private Transform playerTransform;
 
+    [Header("Animation")] public Animator animator;
+
     private void Start()
     {
+        
         currentPoint = 0;
         _timeUntilLost = 0f;
         agent.angularSpeed = enemyRotationSpeed;
@@ -37,6 +40,14 @@ public class EnemyController : MonoBehaviour
     {
         playerTransform = LookForPlayer();
         EnemyMovement();
+
+        float angle = Vector3.SignedAngle(transform.forward, agent.velocity, Vector3.up); 
+        // Debug.Log("Forward: " + agent.velocity.magnitude / agent.speed);
+        // Debug.Log("Turn Angle: " + angle);
+        
+        
+        animator.SetFloat("Forward",agent.velocity.magnitude / agent.speed);
+        animator.SetFloat("Turn",angle / 90);
     }
 
 
