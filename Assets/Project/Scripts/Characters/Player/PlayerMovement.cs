@@ -1,9 +1,12 @@
 ﻿
 using UnityEngine;
+
 using UnityEngine.Serialization;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
+namespace Project.Scripts
+{
     public class PlayerMovement : MonoBehaviour
     {
         public Transform playerTransform;
@@ -168,3 +171,4 @@ using Valve.VR.InteractionSystem;
 
         }
     }
+}
