@@ -21,7 +21,7 @@ public class Pickable : MonoBehaviour
         {
             Pick();
             
-            Debug.Log("Pick");
+  //          Debug.Log("Pick");
         }
     }
 
@@ -49,7 +49,7 @@ public class Pickable : MonoBehaviour
 
             
 
-            goal = playerPos + dir * overshootDist + Vector3.down * 0.5f + playerHeadTransform.right * 0.3f ;
+            goal = playerPos + dir * overshootDist + Vector3.down * 0.3f ;
             Vector3 pos = transform.position;
 
             transform.position = Vector3.MoveTowards(pos, goal, pickSpeed * Time.deltaTime);

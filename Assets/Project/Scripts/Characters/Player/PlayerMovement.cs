@@ -170,11 +170,11 @@ namespace Project.Scripts
             Vector3 ret;
             if (isCrouched)
             {
-                ret = playerTransform.position ;
+                ret = playerTransform.position + crouchDistance * Vector3.up ;
             }
             else
             {
-                ret = playerTransform.position + crouchDistance * Vector3.up ;
+                ret = playerTransform.position  ;
             }
 
             return ret;
