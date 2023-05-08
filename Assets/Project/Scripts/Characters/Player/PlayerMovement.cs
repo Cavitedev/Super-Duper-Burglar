@@ -21,6 +21,7 @@ namespace Project.Scripts
         public float crouchDistance = 0.4f;
 
         public AudioSource footsteps;
+        public float delay = 0.5f;
 
 
         public SteamVR_Action_Boolean crouch = SteamVR_Input.GetBooleanAction("Crouch");
@@ -77,10 +78,13 @@ namespace Project.Scripts
                 if (!AnyObstacleInDirection(direction))
                 {
                     transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
-                    footsteps.Play();
+                    footsteps.PlayDelayed(delay);
+
                 }
-                
-                
+
+            
+
+
             }
             
             if (TooCloseObstacle())
