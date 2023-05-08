@@ -7,7 +7,7 @@ public class InteractableDoor : MonoBehaviour
     
     public bool isOpen;
     public Vector3 closedRotation;
-
+    public AudioSource Door;
 
     public void ToogleDoor(Vector3 openRotation)
     {
@@ -23,11 +23,13 @@ public class InteractableDoor : MonoBehaviour
     {
         isOpen = true;
         UpdateDoorState(openRotation);
+        Door.Play();
     }
     void CloseDoor(Vector3 openRotation)
     {
         isOpen = false;
         UpdateDoorState(openRotation);
+        Door.Play();
     }
     
     void UpdateDoorState(Vector3 openRotation)

@@ -20,6 +20,9 @@ namespace Project.Scripts
         public float height = 2f;
         public float crouchDistance = 0.4f;
 
+        public AudioSource footsteps;
+
+
         public SteamVR_Action_Boolean crouch = SteamVR_Input.GetBooleanAction("Crouch");
         public SteamVR_Action_Boolean standUp = SteamVR_Input.GetBooleanAction("StandUp");
 
@@ -74,6 +77,7 @@ namespace Project.Scripts
                 if (!AnyObstacleInDirection(direction))
                 {
                     transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
+                    footsteps.Play();
                 }
                 
                 
