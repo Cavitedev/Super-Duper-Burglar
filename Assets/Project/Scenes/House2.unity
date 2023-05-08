@@ -1520,7 +1520,7 @@ MonoBehaviour:
   onPick:
     m_PersistentCalls:
       m_Calls: []
-  pickau: {fileID: 544385243}
+  pickau: {fileID: 0}
   pickSpeed: 1.5
 --- !u!82 &544385243
 AudioSource:
@@ -3205,7 +3205,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -4861,7 +4861,7 @@ MonoBehaviour:
   onPick:
     m_PersistentCalls:
       m_Calls: []
-  pickau: {fileID: 1172649531}
+  pickau: {fileID: 0}
   pickSpeed: 1.5
 --- !u!82 &1172649531
 AudioSource:
@@ -4882,7 +4882,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -6066,7 +6066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509588483775605749, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: height
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4509588483775605749, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: radious
@@ -6098,7 +6098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509588483775605749, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: crouchDistance
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4509588483775605749, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: playerTransform
@@ -6677,7 +6677,7 @@ MonoBehaviour:
   onPick:
     m_PersistentCalls:
       m_Calls: []
-  pickau: {fileID: 0}
+  pickau: {fileID: 1172649531}
   pickSpeed: 1.5
 --- !u!65 &1477106859
 BoxCollider:

@@ -174,7 +174,7 @@ namespace Project.Scripts
             }
             else
             {
-                ret = playerTransform.position  ;
+                ret = playerTransform.position ;
             }
 
             return ret;

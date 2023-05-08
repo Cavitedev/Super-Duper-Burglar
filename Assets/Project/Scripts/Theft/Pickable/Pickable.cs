@@ -11,6 +11,7 @@ public class Pickable : MonoBehaviour
 {
 
     public UnityEvent onPick;
+    public AudioSource pickau;
     
     public float pickSpeed = 1.5f;
     // Called every Update() while a Hand is hovering over this object
@@ -20,8 +21,8 @@ public class Pickable : MonoBehaviour
         if (SteamVR_Input.GetStateDown("GrabPinch", handType))
         {
             Pick();
-            
-            Debug.Log("Pick");
+            pickau.Play();
+            //Debug.Log("Pick");
         }
     }
 
