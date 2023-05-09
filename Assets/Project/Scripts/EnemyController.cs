@@ -80,10 +80,8 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyMovement()
     {
-        if (!_inRange || playerTransform == null) 
+        if (!_inRange || playerTransform == null)
         {
-
-
             Vector3 enemyPosition = transform.position;
             Vector3 toPoint = pathPoints[currentPoint].position - enemyPosition;
             toPoint.y = 0;
@@ -101,7 +99,7 @@ public class EnemyController : MonoBehaviour
                         {
                             currentPoint = 0;
                         }
-                        
+
                         agent.SetDestination(pathPoints[currentPoint].position);
                     }
                     else
@@ -149,43 +147,28 @@ public class EnemyController : MonoBehaviour
 
         if (toPlayer.magnitude <= detectionRadius)
         {
-
-
             if (Vector3.Dot(toPlayer.normalized, transform.forward) >
-                Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad)) {
-
+                Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad))
+            {
                 if (RaycastPlayer())
                 {
                     _timeUntilLost = timeUntilLost;
                     _inRange = true;
                     Debug.Log("Player has been detected!");
-                    return Player.instance.transform; 
+                    return Player.instance.transform;
                 }
-                
-
             }
         }
-        else // Funcion de busqueda del jugador cuando se pierde su rastro
+
+        if (_inRange)
         {
-            if (_timeUntilLost <= 0f && _inRange) //Aun no ha entrado a el if
-            {
-                _timeUntilLost = 0f;
-                _inRange = false;
-                return null;
-            }
-            else if (_timeUntilLost <= 0f && !_inRange) //Ya acabó el tiempo y se devolvió la posicion
-            {
-                _timeUntilLost = 0f;
-                _inRange = false;
-                agent.SetDestination(pathPoints[currentPoint].position);
-                return null;
-            }
-            else //Aun sabe donde esta el jugador
-            {
-                _timeUntilLost -= Time.deltaTime; //Tiempo va bajando mientras esté fuera de rango
-                _inRange = true;
-                return PlayerController.Instance.transform;
-            }
+            _timeUntilLost -= Time.deltaTime;
+        }
+        if (_timeUntilLost <= 0f && _inRange) //Aun no ha entrado a el if
+        {
+            agent.SetDestination(pathPoints[currentPoint].position);
+            _inRange = false;
+            return null;
         }
 
 
@@ -194,13 +177,13 @@ public class EnemyController : MonoBehaviour
 
     private bool RaycastPlayer()
     {
-
         foreach (Transform eye in eyes)
         {
             RaycastHit hit;
-            Vector3 toPlayer = Player.instance.transform.position - eye.position;
+            Vector3 toPlayer = Player.instance.hmdTransform.position - eye.position;
 
-            if (Physics.Raycast(eye.position, toPlayer, out hit,  detectionRadius, _maskRayFilter))
+            Debug.DrawRay(eye.position, toPlayer, Color.green);
+            if (Physics.Raycast(eye.position, toPlayer, out hit, detectionRadius, _maskRayFilter))
             {
                 if (hit.transform.gameObject.layer == Consts.PlayerLayer)
                 {
@@ -210,6 +193,5 @@ public class EnemyController : MonoBehaviour
         }
 
         return false;
-
     }
 }
