@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] Transform[] pathPoints;
     //Detection
+    [SerializeField] private Transform[] eyes;
     [SerializeField] float enemyRotationSpeed = 100f;
 
     [SerializeField] float timeUntilLost = 5f;
@@ -148,27 +149,21 @@ public class EnemyController : MonoBehaviour
 
         if (toPlayer.magnitude <= detectionRadius)
         {
-            RaycastHit hit;
 
-            if (Physics.SphereCast(enemyPosition, 1f, toPlayer, out hit, detectionRadius, _maskRayFilter))
-            {
-                if (hit.transform.gameObject.layer == Consts.PlayerLayer)
+
+            if (Vector3.Dot(toPlayer.normalized, transform.forward) >
+                Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad)) {
+
+                if (RaycastPlayer())
                 {
                     _timeUntilLost = timeUntilLost;
                     _inRange = true;
                     Debug.Log("Player has been detected!");
-                    return Player.instance.transform;
+                    return Player.instance.transform; 
                 }
+                
+
             }
-
-
-            // if (Vector3.Dot(toPlayer.normalized, transform.forward) >
-            //     Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad)) {
-            //     _timeUntilLost = timeUntilLost;
-            //     _inRange = true;
-            //     Debug.Log("Player has been detected!");
-            //     return PlayerController.Instance.transform; 
-            // }
         }
         else // Funcion de busqueda del jugador cuando se pierde su rastro
         {
@@ -195,5 +190,26 @@ public class EnemyController : MonoBehaviour
 
 
         return null;
+    }
+
+    private bool RaycastPlayer()
+    {
+
+        foreach (Transform eye in eyes)
+        {
+            RaycastHit hit;
+            Vector3 toPlayer = Player.instance.transform.position - eye.position;
+
+            if (Physics.Raycast(eye.position, toPlayer, out hit,  detectionRadius, _maskRayFilter))
+            {
+                if (hit.transform.gameObject.layer == Consts.PlayerLayer)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
     }
 }
