@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 
 using UnityEngine.Serialization;
@@ -37,6 +38,11 @@ namespace Project.Scripts
         private bool isCrouched = false;
 
         private float speed = 0.0f;
+
+        private void Start()
+        {
+         crouch = SteamVR_Input.GetBooleanAction("Crouch");
+        }
 
         void Update()
         {
@@ -108,7 +114,7 @@ namespace Project.Scripts
 
             Vector3 point1 = PositionWihoutCrouch();
             Vector3 point2 = PositionWihoutCrouch();
-            point1.y -= height;
+            point1.y -= height/2;
             
 
             point1 -= direction * distance;
