@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 
 using UnityEngine.Serialization;
@@ -20,6 +21,11 @@ namespace Project.Scripts
         public float height = 2f;
         public float crouchDistance = 0.4f;
 
+        public AudioSource footsteps;
+        public float delay = 0.5f;
+        private float _lastSoundTime;
+
+
         public SteamVR_Action_Boolean crouch = SteamVR_Input.GetBooleanAction("Crouch");
         public SteamVR_Action_Boolean standUp = SteamVR_Input.GetBooleanAction("StandUp");
 
@@ -32,6 +38,11 @@ namespace Project.Scripts
         private bool isCrouched = false;
 
         private float speed = 0.0f;
+
+        private void Start()
+        {
+         crouch = SteamVR_Input.GetBooleanAction("Crouch");
+        }
 
         void Update()
         {
@@ -74,9 +85,15 @@ namespace Project.Scripts
                 if (!AnyObstacleInDirection(direction))
                 {
                     transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
+                    
+                    
+                    PlayFootstep();
+
                 }
-                
-                
+
+            
+
+
             }
             
             if (TooCloseObstacle())
@@ -89,7 +106,6 @@ namespace Project.Scripts
                 _lastPos = playerTransform.position;
             }
 
-            
         }
 
         private bool AnyObstacleInDirection(Vector3 direction)
@@ -98,8 +114,8 @@ namespace Project.Scripts
 
             Vector3 point1 = PositionWihoutCrouch();
             Vector3 point2 = PositionWihoutCrouch();
-            point1.y = 0.01f;
-            point2.y += height/2;
+            point1.y -= height/2;
+            
 
             point1 -= direction * distance;
             point2 -= direction * distance;
@@ -160,15 +176,28 @@ namespace Project.Scripts
             Vector3 ret;
             if (isCrouched)
             {
-                ret = playerTransform.position ;
+                ret = playerTransform.position + crouchDistance * Vector3.up ;
             }
             else
             {
-                ret = playerTransform.position + crouchDistance * Vector3.up ;
+                ret = playerTransform.position ;
             }
 
             return ret;
 
         }
+        
+            
+        private void PlayFootstep()
+        {
+            float currentTime = Time.time;
+            if (_lastSoundTime + delay < currentTime)
+            {
+                _lastSoundTime = Time.time;
+                footsteps.Play();
+
+            }
+        }
     }
+
 }
