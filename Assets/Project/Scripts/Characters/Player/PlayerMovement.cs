@@ -108,8 +108,8 @@ namespace Project.Scripts
 
             Vector3 point1 = PositionWihoutCrouch();
             Vector3 point2 = PositionWihoutCrouch();
-            point1.y = 0.01f;
-            point2.y += height/2;
+            point1.y -= height;
+            
 
             point1 -= direction * distance;
             point2 -= direction * distance;
