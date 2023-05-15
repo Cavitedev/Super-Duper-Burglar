@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PlayerStats : MonoBehaviour
 {
 
     [SerializeField] private bool timeActive = true;
+
+    public delegate void OnGameOver(bool hasWon);
+
+    public OnGameOver onGameOver;
     
     // TIME
     private float _timeLeft;
@@ -82,6 +87,7 @@ public class PlayerStats : MonoBehaviour
     public void GameOver(bool win)
     {
         Debug.Log(win ? "YOU WIN!" : "YOU LOSE!");
+        onGameOver(win);
     }
 
     
