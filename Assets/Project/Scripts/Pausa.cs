@@ -4,19 +4,44 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 public class Pausa : MonoBehaviour
 {
-    private Transform _playerCamera;
-    public Transform _playerHand;
+    [SerializeField] GameObject pauseCanvas;
+
     public float distancePlayer = 2f;
     public float updateSpeed = 5f;
+
+    public void Start()
+    {
+        pauseCanvas = gameObject;
+        pauseCanvas.SetActive(false);
+    }
     public void PauseGame()
     {
+        pauseCanvas.SetActive(true);
        Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
+        pauseCanvas.SetActive(false);
         Time.timeScale = 1;
     }
 
-  
+    public void ExitButton()
+    {
+        Quit();
+
+
+    }
+
+    public static void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER
+         Application.OpenURL(webplayerQuitURL);
+#else
+         Application.Quit();
+#endif
+    }
+
 }
