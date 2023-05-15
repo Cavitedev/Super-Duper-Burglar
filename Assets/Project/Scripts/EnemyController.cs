@@ -3,6 +3,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class EnemyController : MonoBehaviour
 
     public bool movementLoop;
     private bool _inRange = false, _reverse_path = false;
-
+    private bool _touchedPlayer = false;
     [Header("Animation")] public Animator animator;
     private int _maskRayFilter;
     float _timeUntilLost;
@@ -87,7 +88,7 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyMovement()
     {
-        if (!_inRange || playerTransform == null)
+        if (!_inRange || playerTransform == null && _touchedPlayer == false)
         {
             Vector3 enemyPosition = transform.position;
             Vector3 toPoint = pathPoints[currentPoint].position - enemyPosition;
@@ -135,7 +136,7 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
-        else
+        else if(_touchedPlayer == false)
         {
             agent.SetDestination(playerTransform.position);
             PlayFootstep();
@@ -155,7 +156,7 @@ public class EnemyController : MonoBehaviour
         toPlayer.y = 0;
 
 
-        if (toPlayer.magnitude <= detectionRadius)
+        if (toPlayer.magnitude <= detectionRadius && _touchedPlayer == false)
         {
             if (Vector3.Dot(toPlayer.normalized, transform.forward) >
                 Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad))
@@ -165,6 +166,7 @@ public class EnemyController : MonoBehaviour
                     if (toPlayer.magnitude <= loseRadius)
                     {
                         //PlayerStats.Instance.GameOver(false);
+                        StartCoroutine(waitTillSearchAgain());
                     }
                     
                     _timeUntilLost = timeUntilLost;
@@ -178,8 +180,9 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (_inRange)
+        if (_inRange && !_touchedPlayer)
         {
+            agent.SetDestination(Player.instance.transform.position);
             _timeUntilLost -= Time.deltaTime;
         }
         if (_timeUntilLost <= 0f && _inRange) //Aun no ha entrado a el if
@@ -223,5 +226,15 @@ public class EnemyController : MonoBehaviour
             footsteps.Play();
 
         }
+    }
+
+    IEnumerator waitTillSearchAgain()
+    {
+        Debug.Log("Te pillé!");
+        _timeUntilLost = 0f;
+        _touchedPlayer = true;
+        PlayerStats.Instance.addToTimeMultiplier(0.1f);
+        yield return new WaitForSeconds(5f);
+        _touchedPlayer = false;
     }
 }
