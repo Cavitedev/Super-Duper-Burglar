@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Clock_System : MonoBehaviour
 {
@@ -45,14 +46,43 @@ public class Clock_System : MonoBehaviour
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
+        
 
-        timeLeftText.text = timeLeft.ToString();
+        //timeLeftText.text = timeLeft.ToString();
         moneyEarnedText.text = currentMoney.ToString()+"€";
 
         if (timeLeft <= 0f)
         {
             Debug.Log("SE ACABO EL TIEMPO!");
         }
+        else
+        {
+            timeLeft -= Time.deltaTime;
+
+            float minutes = Mathf.FloorToInt(timeLeft / 60);
+            float seconds = Mathf.FloorToInt(timeLeft % 60);
+            TimeSpan time = TimeSpan.FromSeconds(timeLeft);
+            timeLeftText.text = time.ToString(@"mm\:ss\:fff");
+        }
     }
+
+    /*
+     void Update()
+    {
+        if (timerOn)
+        {
+            TimeUsed += Time.deltaTime;
+            updateTimer(TimeUsed);
+        }
+    }
+
+    void updateTimer(float currentTime)
+    {
+        currentTime += 1;
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+        TimeSpan time = TimeSpan.FromSeconds(TimeUsed);
+        TimerTxt.text = time.ToString(@"mm\:ss\:fff");//string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+     */
 }
