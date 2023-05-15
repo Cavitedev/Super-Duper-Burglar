@@ -7,14 +7,12 @@ using System;
 public class Clock_System : MonoBehaviour
 {
 
-    public float totaltimeSeconds;
-    public float currentMoney;
+
+
 
     [SerializeField] TextMeshPro timeLeftText;
     [SerializeField] TextMeshPro moneyEarnedText;
-
-    private float timeLeft;
-
+    
 
     private static Clock_System _instance;
 
@@ -35,35 +33,21 @@ public class Clock_System : MonoBehaviour
         {
             _instance = this;
         }
-
     }
 
-    private void Start()
+
+
+    public void UpdateTime(float timeLeft)
     {
-        timeLeft = totaltimeSeconds;
-        currentMoney = 0;
+        float minutes = Mathf.FloorToInt(timeLeft / 60);
+        float seconds = Mathf.FloorToInt(timeLeft % 60);
+        TimeSpan time = TimeSpan.FromSeconds(timeLeft);
+        timeLeftText.text = time.ToString(@"mm\:ss\:fff");
     }
 
-    void Update()
+    public void UpdateMoney(int currentMoney)
     {
-        
-
-        //timeLeftText.text = timeLeft.ToString();
-        moneyEarnedText.text = currentMoney.ToString()+"€";
-
-        if (timeLeft <= 0f)
-        {
-            Debug.Log("SE ACABO EL TIEMPO!");
-        }
-        else
-        {
-            timeLeft -= Time.deltaTime;
-
-            float minutes = Mathf.FloorToInt(timeLeft / 60);
-            float seconds = Mathf.FloorToInt(timeLeft % 60);
-            TimeSpan time = TimeSpan.FromSeconds(timeLeft);
-            timeLeftText.text = time.ToString(@"mm\:ss\:fff");
-        }
+        moneyEarnedText.text = $"{currentMoney}€";
     }
 
     /*
