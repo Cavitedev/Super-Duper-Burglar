@@ -1,5 +1,225 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &818450422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818450423}
+  - component: {fileID: 818450424}
+  - component: {fileID: 818450425}
+  m_Layer: 7
+  m_Name: FlashLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818450423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818450422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.23000002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4509588483158905324}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &818450424
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818450422}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 11
+  m_SpotAngle: 83
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 2800000, guid: 793a7b89336901b40aadefbbe115e947, type: 3}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &818450425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818450422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62b7dae24f6b2045b5a5876945ba6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight:
+    actionPath: /actions/default/in/Flashlight
+    needsReinit: 0
+--- !u!1 &1841093087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841093088}
+  - component: {fileID: 1841093090}
+  - component: {fileID: 1841093089}
+  m_Layer: 7
+  m_Name: FlashLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841093088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841093087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4509588483158837318}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &1841093090
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841093087}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 11
+  m_SpotAngle: 83
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 2800000, guid: 793a7b89336901b40aadefbbe115e947, type: 3}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &1841093089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841093087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62b7dae24f6b2045b5a5876945ba6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight:
+    actionPath: /actions/default/in/Flashlight
+    needsReinit: 0
 --- !u!1 &4509588483159163072
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509588483158920474}
   - component: {fileID: 4509588483148927830}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: ControllerButtonHints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +285,7 @@ GameObject:
   - component: {fileID: 4539704005037765078}
   - component: {fileID: 4509588483148920440}
   - component: {fileID: 4539703959800763584}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: '[SteamVR]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509588483158931716}
   - component: {fileID: 4509588483148971658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ControllerHoverHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509588483158886558}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: HoverPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509588483158954914}
   - component: {fileID: 4509588483148939038}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: ControllerButtonHints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +496,7 @@ GameObject:
   - component: {fileID: 4509588483158892418}
   - component: {fileID: 4509588483147787704}
   - component: {fileID: 4509588483155956128}
-  m_Layer: 27
+  m_Layer: 7
   m_Name: BodyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +559,7 @@ GameObject:
   - component: {fileID: 4509588483158875308}
   - component: {fileID: 4509588483148936144}
   - component: {fileID: 4509588483155972524}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: FallbackHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +661,7 @@ GameObject:
   - component: {fileID: 4509588483148971896}
   - component: {fileID: 4509588483148968922}
   - component: {fileID: 4539704005945065790}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InputModule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +744,7 @@ GameObject:
   - component: {fileID: 4539704003562142648}
   - component: {fileID: 4539704003971994388}
   - component: {fileID: 419541110}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +909,7 @@ GameObject:
   - component: {fileID: 4539704003146606138}
   - component: {fileID: 4539703959749796658}
   - component: {fileID: 316645415}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +1070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509588483158948222}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NoSteamVRFallbackObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +1104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509588483158879876}
   - component: {fileID: 4509588483154286018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FollowHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +1144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509588483158894092}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: ObjectAttachmentPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +1175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509588483158840920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SteamVRObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +1214,7 @@ GameObject:
   - component: {fileID: 4509588483158837318}
   - component: {fileID: 4509588483160430250}
   - component: {fileID: 4509588483148906736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FallbackObjects
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1013,6 +1233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1841093088}
   - {fileID: 1608503131660124348}
   m_Father: {fileID: 4509588483158948222}
   m_RootOrder: 0
@@ -1086,7 +1307,7 @@ GameObject:
   - component: {fileID: 4509588483158961554}
   - component: {fileID: 4509588483158112940}
   - component: {fileID: 4509588483157030388}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1393,9 @@ GameObject:
   - component: {fileID: 1631688102}
   - component: {fileID: 8108944247766223544}
   - component: {fileID: 7180355358773422816}
-  m_Layer: 0
+  - component: {fileID: 768839914}
+  - component: {fileID: 768839915}
+  m_Layer: 7
   m_Name: Our Player
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1248,11 +1471,11 @@ MonoBehaviour:
   maxSpeed: 2
   sensitivity: 2
   radious: 0.1
-  distance: 0.02
+  distance: 0.1
   head: {fileID: 4509588483155996112}
   height: 2
-  crouchDistance: 0.4
-  footsteps: {fileID: 0}
+  crouchDistance: 0.5
+  footsteps: {fileID: 768839915}
   delay: 0.5
   crouch:
     actionPath: /actions/default/in/Crouch
@@ -1276,8 +1499,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLaserPointer: {fileID: 316645415}
   leftLaserPointer: {fileID: 419541110}
-  enabled: 1
+  enabled: 0
 --- !u!136 &8108944247766223544
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509588483159243140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.55
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.77, z: 0}
+--- !u!82 &7180355358773422816
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509588483159243140}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 825d688f717750646b0a05cb2db4ae16, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.323
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!136 &768839914
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1291,7 +1624,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &7180355358773422816
+--- !u!82 &768839915
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1399,7 +1732,7 @@ GameObject:
   - component: {fileID: 4509588483157058480}
   - component: {fileID: 4509588483158057300}
   - component: {fileID: 4509588483148947582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,7 +1842,7 @@ GameObject:
   - component: {fileID: 4509588483158931432}
   - component: {fileID: 4509588483146849354}
   - component: {fileID: 4509588483155996112}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: HeadCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509588483158840070}
   - component: {fileID: 4509588483148977786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ControllerHoverHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1951,7 @@ GameObject:
   - component: {fileID: 4509588483160482534}
   - component: {fileID: 4509588483148948656}
   - component: {fileID: 4509588483150073394}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VRCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1637,6 +1970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 818450423}
   - {fileID: 6918967823952396464}
   m_Father: {fileID: 4509588483158840920}
   m_RootOrder: 3
@@ -1713,7 +2047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326070528731550}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +2078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326067895423892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1782,7 +2116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326069805725554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1813,7 +2147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326067819556044}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1844,7 +2178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326070564960170}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1882,7 +2216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326070394812980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1914,7 +2248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326067567191668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +2281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326070396147520}
   - component: {fileID: 4590879140138770504}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sound Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2074,7 +2408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326068937674362}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2106,7 +2440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326069587562706}
   - component: {fileID: 4572277451412516750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326069713047474}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2228,7 +2562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326071212437012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326068419118214}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2291,7 +2625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326069424418598}
   - component: {fileID: 4539704005956102924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DebugUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2335,7 +2669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326068492972802}
   - component: {fileID: 4595013947763695230}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: snapTurnFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2389,7 +2723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326069148300982}
   - component: {fileID: 4539703959025164682}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2439,7 +2773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326069436512792}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2470,7 +2804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326068082178658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2502,7 +2836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326067478745040}
   - component: {fileID: 4572277451466555348}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2594,7 +2928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326069884277874}
   - component: {fileID: 4595013936172851912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: snapTurnFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2647,7 +2981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326070520853478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,7 +3012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326067828831714}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: ObjectAttachmentPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2709,7 +3043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326068789144950}
-  m_Layer: 26
+  m_Layer: 7
   m_Name: HoverPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2741,7 +3075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511326069325978286}
   - component: {fileID: 4539703959727602488}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Snap Turn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2805,7 +3139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326068147185470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arrow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2836,7 +3170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326067418701642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arrow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2867,7 +3201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326068604313596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2898,7 +3232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4511326069100693720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dot_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2931,7 +3265,7 @@ GameObject:
   - component: {fileID: 6918967823952396464}
   - component: {fileID: 2275015072065004285}
   - component: {fileID: 5021889932238750095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2951,7 +3285,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4509588483158905324}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &2275015072065004285
 Light:
@@ -3028,8 +3362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight:
-    actionPath: /actions//in/Flashlight
-    needsReinit: 1
+    actionPath: /actions/default/in/Flashlight
+    needsReinit: 0
 --- !u!1 &8022303775179493366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3375,7 @@ GameObject:
   - component: {fileID: 1608503131660124348}
   - component: {fileID: 4521198857083537593}
   - component: {fileID: 8747671441375639076}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3061,7 +3395,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4509588483158837318}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &4521198857083537593
 Light:
@@ -3138,5 +3472,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight:
-    actionPath: /actions//in/Flashlight
-    needsReinit: 1
+    actionPath: /actions/default/in/Flashlight
+    needsReinit: 0
