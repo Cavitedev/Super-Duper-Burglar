@@ -176,7 +176,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 160, y: 30, z: 1}
+  m_Size: {x: 397.89532, y: 87.01738, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &497537943
 MonoBehaviour:
@@ -690,7 +690,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 160, y: 30, z: 1}
+  m_Size: {x: 396.60205, y: 89.4443, z: 1.7144141}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1692411053
 GameObject:

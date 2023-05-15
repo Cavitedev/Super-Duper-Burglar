@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float timeUntilLost = 5f;
 
     public float detectionRadius = 10.0f;
+    [SerializeField] private float loseRadius = 1f;
     public float detectionAngle = 90.0f;
 
     public bool movementLoop;
@@ -152,12 +153,18 @@ public class EnemyController : MonoBehaviour
             {
                 if (RaycastPlayer())
                 {
-                    Debug.Log("Player");
+                    if (toPlayer.magnitude <= loseRadius)
+                    {
+                        PlayerStats.Instance.GameOver(false);
+                    }
+                    
                     _timeUntilLost = timeUntilLost;
                     _inRange = true;
-                    Debug.Log("Player has been detected!");
                     agent.SetDestination(Player.instance.transform.position);
                     return Player.instance.transform;
+                    
+
+                    
                 }
             }
         }

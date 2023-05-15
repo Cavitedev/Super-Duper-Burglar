@@ -27,6 +27,10 @@ public class PlayerStats : MonoBehaviour
         Debug.Log($"Current Bounty: <color=green>{bounty}</color>");
     }
 
+    public void GameOver(bool win)
+    {
+        Debug.Log(win ? "YOU WIN!" : "YOU LOSE!");
+    }
 
     
 }
