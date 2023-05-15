@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
-public class Pausa : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject pauseCanvas;
     public SteamVR_Action_Boolean pauseInput = SteamVR_Input.GetBooleanAction("Pause");
