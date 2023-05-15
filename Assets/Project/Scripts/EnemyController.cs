@@ -161,9 +161,11 @@ public class EnemyController : MonoBehaviour
             {
                 if (RaycastPlayer())
                 {
+                    Debug.Log("Player");
                     _timeUntilLost = timeUntilLost;
                     _inRange = true;
                     Debug.Log("Player has been detected!");
+                    agent.SetDestination(Player.instance.transform.position);
                     return Player.instance.transform;
                 }
             }
@@ -194,6 +196,7 @@ public class EnemyController : MonoBehaviour
             Debug.DrawRay(eye.position, toPlayer, Color.green);
             if (Physics.Raycast(eye.position, toPlayer, out hit, detectionRadius, _maskRayFilter))
             {
+
                 if (hit.transform.gameObject.layer == Consts.PlayerLayer)
                 {
                     return true;
