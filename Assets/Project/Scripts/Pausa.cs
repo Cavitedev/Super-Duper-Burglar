@@ -11,8 +11,15 @@ public class Pausa : MonoBehaviour
 
     public void Start()
     {
-        pauseCanvas = gameObject;
         pauseCanvas.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if (Input.GetButtonDown("P"))
+        {
+            PauseGame();
+        }
     }
     public void PauseGame()
     {

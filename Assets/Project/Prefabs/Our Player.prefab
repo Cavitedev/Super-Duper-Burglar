@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 397173742}
   - component: {fileID: 397173741}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,9 +259,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1896782512}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: StartButton
+      - m_Target: {fileID: 1437592080519237167}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -752,8 +752,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1896782512}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+      - m_Target: {fileID: 1437592080519237167}
+        m_TargetAssemblyTypeName: Pausa, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -996,7 +996,6 @@ GameObject:
   - component: {fileID: 1896782515}
   - component: {fileID: 1896782514}
   - component: {fileID: 1896782513}
-  - component: {fileID: 1896782512}
   - component: {fileID: 1896782511}
   m_Layer: 5
   m_Name: Canvas
@@ -1004,7 +1003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1896782516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1087,18 +1086,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1896782512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896782510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d05138dbb404a40a3d9f7df17fa741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1896782511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,6 +2276,7 @@ GameObject:
   - component: {fileID: 7180355358773422816}
   - component: {fileID: 768839914}
   - component: {fileID: 768839915}
+  - component: {fileID: 1437592080519237167}
   m_Layer: 7
   m_Name: Our Player
   m_TagString: Untagged
@@ -2614,6 +2602,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1437592080519237167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509588483159243140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50776b2725675704b914194148287263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 1896782510}
+  distancePlayer: 2
+  updateSpeed: 5
 --- !u!1 &4509588483159244778
 GameObject:
   m_ObjectHideFlags: 0
