@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/StartMenu.unity
     guid: 4c0266c685e0f9f45ae2958ba4d1bd02
   - enabled: 1
-    path: Assets/Project/Scenes/HouseBath.unity
+    path: Assets/Project/Scenes/House2.unity
     guid: 51eb327f6495db5418d23e2d545c8a84
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: e11b2319521d9704890be4565bc972ac, type: 2}
