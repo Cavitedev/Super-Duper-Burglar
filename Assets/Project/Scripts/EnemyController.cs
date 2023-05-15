@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float timeUntilLost = 5f;
 
     public float detectionRadius = 10.0f;
+    [SerializeField] private float loseRadius = 1f;
     public float detectionAngle = 90.0f;
 
     public bool movementLoop;
@@ -29,6 +30,12 @@ public class EnemyController : MonoBehaviour
     float _timeUntilLost;
     private int currentPoint;
     private Transform playerTransform;
+
+
+
+    public AudioSource footsteps;
+    public float delay = 1f;
+    private float _lastSoundTime;
 
     private void Start()
     {
@@ -101,11 +108,13 @@ public class EnemyController : MonoBehaviour
                         }
 
                         agent.SetDestination(pathPoints[currentPoint].position);
+                        PlayFootstep();
                     }
                     else
                     {
                         currentPoint = currentPoint - 1;
                         agent.SetDestination(pathPoints[currentPoint].position);
+                        PlayFootstep();
                     }
 
                     if (!movementLoop)
@@ -129,6 +138,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             agent.SetDestination(playerTransform.position);
+            PlayFootstep();
         }
     }
     //TODO CAMBIAR PLAYERCONTROLLER.Instance POR Player.instance
@@ -152,10 +162,18 @@ public class EnemyController : MonoBehaviour
             {
                 if (RaycastPlayer())
                 {
+                    if (toPlayer.magnitude <= loseRadius)
+                    {
+                        //PlayerStats.Instance.GameOver(false);
+                    }
+                    
                     _timeUntilLost = timeUntilLost;
                     _inRange = true;
-                    Debug.Log("Player has been detected!");
+                    agent.SetDestination(Player.instance.transform.position);
                     return Player.instance.transform;
+                    
+
+                    
                 }
             }
         }
@@ -185,6 +203,7 @@ public class EnemyController : MonoBehaviour
             Debug.DrawRay(eye.position, toPlayer, Color.green);
             if (Physics.Raycast(eye.position, toPlayer, out hit, detectionRadius, _maskRayFilter))
             {
+
                 if (hit.transform.gameObject.layer == Consts.PlayerLayer)
                 {
                     return true;
@@ -193,5 +212,16 @@ public class EnemyController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void PlayFootstep()
+    {
+        float currentTime = Time.time;
+        if (_lastSoundTime + delay < currentTime)
+        {
+            _lastSoundTime = Time.time;
+            footsteps.Play();
+
+        }
     }
 }

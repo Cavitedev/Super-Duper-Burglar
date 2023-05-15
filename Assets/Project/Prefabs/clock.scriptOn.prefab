@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62670961996191069}
+  - component: {fileID: 6174160116831819055}
   m_Layer: 0
   m_Name: clock.scriptOn
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834703344423636967}
-  m_LocalRotation: {x: 0.000000029802322, y: 0.0000000018626451, z: -0.028545905, w: 0.9995925}
+  m_LocalRotation: {x: 0, y: 0, z: -0.028549658, w: 0.99959236}
   m_LocalPosition: {x: -0.025000006, y: 0.33599973, z: -3.3110008}
   m_LocalScale: {x: 0.0620654, y: 0.062065404, z: 0.0620654}
   m_ConstrainProportionsScale: 0
@@ -120,6 +121,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.272}
+--- !u!114 &6174160116831819055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834703344423636967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854156ae6bd686040acada8a5f5e0732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeftText: {fileID: 5492143208022559052}
+  moneyEarnedText: {fileID: 5492143208474618986}
 --- !u!1 &2797808044113755673
 GameObject:
   m_ObjectHideFlags: 0

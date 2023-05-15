@@ -66,6 +66,10 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/Pause",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -189,7 +193,8 @@
       "/actions/default/in/Touchpad": "Touchpad",
       "/actions/default/in/StandUp": "Stand Up",
       "/actions/default/in/Crouch": "Crouch",
-      "/actions/default/in/Flashlight": "Flashlight"
+      "/actions/default/in/Flashlight": "Flashlight",
+      "/actions/default/in/Pause": "Pause"
     }
   ]
 }
