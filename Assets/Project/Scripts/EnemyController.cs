@@ -31,6 +31,12 @@ public class EnemyController : MonoBehaviour
     private int currentPoint;
     private Transform playerTransform;
 
+
+
+    public AudioSource footsteps;
+    public float delay = 1f;
+    private float _lastSoundTime;
+
     private void Start()
     {
         _maskRayFilter = 1 << Consts.ObstaclesLayer | 1 << Consts.PlayerLayer;
@@ -102,11 +108,13 @@ public class EnemyController : MonoBehaviour
                         }
 
                         agent.SetDestination(pathPoints[currentPoint].position);
+                        PlayFootstep();
                     }
                     else
                     {
                         currentPoint = currentPoint - 1;
                         agent.SetDestination(pathPoints[currentPoint].position);
+                        PlayFootstep();
                     }
 
                     if (!movementLoop)
@@ -130,6 +138,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             agent.SetDestination(playerTransform.position);
+            PlayFootstep();
         }
     }
     //TODO CAMBIAR PLAYERCONTROLLER.Instance POR Player.instance
@@ -203,5 +212,16 @@ public class EnemyController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void PlayFootstep()
+    {
+        float currentTime = Time.time;
+        if (_lastSoundTime + delay < currentTime)
+        {
+            _lastSoundTime = Time.time;
+            footsteps.Play();
+
+        }
     }
 }
