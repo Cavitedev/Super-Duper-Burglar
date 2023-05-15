@@ -25,7 +25,6 @@ public class PlayerStats : MonoBehaviour
             if (!timeActive) return;
             _timeLeft = value;
             Clock_System.Instance.UpdateTime(_timeLeft);
-            if (_timeLeft <= 0) onGameOver();
         }
     }
     
@@ -67,7 +66,7 @@ public class PlayerStats : MonoBehaviour
         if (TimeLeft <= 0f)
         {
             TimeLeft = 0;
-            Debug.Log("SE ACABO EL TIEMPO!");
+            onGameOver?.Invoke();
         }
         else
         {
