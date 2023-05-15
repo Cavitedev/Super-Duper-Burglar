@@ -164,7 +164,7 @@ public class EnemyController : MonoBehaviour
                 {
                     if (toPlayer.magnitude <= loseRadius)
                     {
-                        PlayerStats.Instance.GameOver(false);
+                        //PlayerStats.Instance.GameOver(false);
                     }
                     
                     _timeUntilLost = timeUntilLost;

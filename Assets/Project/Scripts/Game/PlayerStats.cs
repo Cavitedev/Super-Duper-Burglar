@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private bool timeActive = true;
 
-    public delegate void OnGameOver(bool hasWon);
+    public delegate void OnGameOver();
 
     public OnGameOver onGameOver;
     
@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
             if (!timeActive) return;
             _timeLeft = value;
             Clock_System.Instance.UpdateTime(_timeLeft);
+            if (_timeLeft <= 0) onGameOver();
         }
     }
     
@@ -65,6 +66,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (TimeLeft <= 0f)
         {
+            TimeLeft = 0;
             Debug.Log("SE ACABO EL TIEMPO!");
         }
         else
@@ -84,10 +86,9 @@ public class PlayerStats : MonoBehaviour
         Debug.Log($"Current Bounty: <color=green>{bounty}</color>");
     }
 
-    public void GameOver(bool win)
+    public void GameOver()
     {
-        Debug.Log(win ? "YOU WIN!" : "YOU LOSE!");
-        onGameOver(win);
+        onGameOver();
     }
 
     
