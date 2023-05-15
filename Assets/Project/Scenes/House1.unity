@@ -1520,7 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeActive: 1
-  totalTime: 20
+  totalTime: 1
 --- !u!1001 &1539624823
 PrefabInstance:
   m_ObjectHideFlags: 0

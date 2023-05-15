@@ -5,11 +5,10 @@ using Valve.VR.InteractionSystem;
 
 public class MoveAroundPlayer : MonoBehaviour
 {
-
     private Transform _playerCamera;
     public float distancePlayer = 2f;
     public float updateSpeed = 5f;
-    
+
     // Start is called before the first frame update
     void Start()
     {

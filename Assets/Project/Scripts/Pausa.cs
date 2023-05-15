@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 public class Pausa : MonoBehaviour
 {
     [SerializeField] GameObject pauseCanvas;
-
+    public SteamVR_Action_Boolean pauseInput = SteamVR_Input.GetBooleanAction("Pause");
+    
     public float distancePlayer = 2f;
     public float updateSpeed = 5f;
 
@@ -16,11 +19,24 @@ public class Pausa : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButtonDown("P"))
+        if (pauseInput.GetStateDown(SteamVR_Input_Sources.Any) || Input.GetKeyDown(KeyCode.P))
+        {
+            ToogleMenu();
+        }
+    }
+
+    public void ToogleMenu()
+    {
+        if (pauseCanvas.activeSelf)
+        {
+            ResumeGame();
+        }
+        else
         {
             PauseGame();
         }
     }
+    
     public void PauseGame()
     {
         pauseCanvas.SetActive(true);
