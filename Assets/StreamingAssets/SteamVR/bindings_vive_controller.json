@@ -112,7 +112,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/flashlight"
+                     "output" : "/actions/default/in/pause"
                   }
                },
                "mode" : "button",
@@ -212,7 +212,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/flashlight"
+                     "output" : "/actions/default/in/pause"
                   }
                },
                "mode" : "button",
@@ -265,7 +265,7 @@
    "controller_type" : "vive_controller",
    "description" : "",
    "interaction_profile" : "",
-   "name" : "Saved Super Duper Burglar TBC with flashlight",
+   "name" : "My [Testing] Super Duper Burglar TBC configuration for Vive Controller",
    "options" : {},
    "simulated_actions" : []
 }

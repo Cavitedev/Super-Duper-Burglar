@@ -6,6 +6,8 @@
 
     public class LaserUIHandler : MonoBehaviour
     {
+        public static LaserUIHandler Instance;
+        
         public LaserPointer rightLaserPointer;
         public LaserPointer leftLaserPointer;
 
@@ -15,6 +17,8 @@
         
         void Awake()
         {
+            Instance = this;
+            
             _laserPointers = new SteamVR_LaserPointer[] {leftLaserPointer, rightLaserPointer};
             
 
