@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     
     // TIME
     private float _timeLeft;
+    public float timeSpeedMulty = 1f;
     public float totalTime;
     public float TimeLeft
     {
@@ -70,11 +71,22 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            TimeLeft -= Time.deltaTime;
+            TimeLeft -= Time.deltaTime * timeSpeedMulty;
         }
     }
 
+    public void addToTimeMultiplier()
+    {
+        StartCoroutine(timeGoesFaster());
+    }
 
+    public IEnumerator timeGoesFaster()
+    {
+        timeSpeedMulty = 1.3f;
+        yield return new WaitForSeconds(8f);
+        timeSpeedMulty = 1f;
+
+    }
 
     public void AddToBounty(int bounty)
     {

@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         _maskRayFilter = 1 << Consts.ObstaclesLayer | 1 << Consts.PlayerLayer;
-
+        //whisperSounds.Play();
         currentPoint = 0;
         _timeUntilLost = 0f;
         agent.angularSpeed = enemyRotationSpeed;
