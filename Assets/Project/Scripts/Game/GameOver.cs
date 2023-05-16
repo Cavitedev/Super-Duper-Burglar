@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR.InteractionSystem;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
 
     public GameObject canvas;
+
+    public Text score;
+
+    [SerializeField] public PlayerStats amount;
     void Start()
     {
         canvas.SetActive(false);

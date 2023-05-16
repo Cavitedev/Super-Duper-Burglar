@@ -12,6 +12,7 @@ public class Clock_System : MonoBehaviour
 
     [SerializeField] TextMeshPro timeLeftText;
     [SerializeField] TextMeshPro moneyEarnedText;
+    public float left = 0;
     
 
     private static Clock_System _instance;
@@ -43,6 +44,7 @@ public class Clock_System : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeLeft % 60);
         TimeSpan time = TimeSpan.FromSeconds(timeLeft);
         timeLeftText.text = time.ToString(@"mm\:ss\:fff");
+        left = timeLeft;
     }
 
     public void UpdateMoney(int currentMoney)
