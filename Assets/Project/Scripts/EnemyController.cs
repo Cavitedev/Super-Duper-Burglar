@@ -3,6 +3,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using System;
 using System.Collections;
 
 public class EnemyController : MonoBehaviour
@@ -25,7 +26,7 @@ public class EnemyController : MonoBehaviour
 
     public bool movementLoop;
     private bool _inRange = false, _reverse_path = false;
-    private bool _touchedPlayer = false;
+
     [Header("Animation")] public Animator animator;
     private int _maskRayFilter;
     float _timeUntilLost;
@@ -35,6 +36,10 @@ public class EnemyController : MonoBehaviour
 
 
     public AudioSource footsteps;
+    public AudioSource creepySounds;
+    public AudioClip scream;
+    private bool soundPlayed = false;
+    private bool isStopped = false;
     public float delay = 1f;
     private float _lastSoundTime;
 
@@ -88,7 +93,7 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyMovement()
     {
-        if (!_inRange || playerTransform == null && _touchedPlayer == false)
+        if ((!_inRange || playerTransform == null))
         {
             Vector3 enemyPosition = transform.position;
             Vector3 toPoint = pathPoints[currentPoint].position - enemyPosition;
@@ -136,7 +141,7 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
-        else if(_touchedPlayer == false)
+        else if(!isStopped)
         {
             agent.SetDestination(playerTransform.position);
             PlayFootstep();
@@ -156,17 +161,20 @@ public class EnemyController : MonoBehaviour
         toPlayer.y = 0;
 
 
-        if (toPlayer.magnitude <= detectionRadius && _touchedPlayer == false)
+        if (toPlayer.magnitude <= detectionRadius && !isStopped)
         {
             if (Vector3.Dot(toPlayer.normalized, transform.forward) >
                 Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad))
             {
                 if (RaycastPlayer())
                 {
+                    if (!soundPlayed)
+                        PlayGritoCuandoEncuentra();
+
                     if (toPlayer.magnitude <= loseRadius)
                     {
+                        StartCoroutine(enemyTePilla());
                         //PlayerStats.Instance.GameOver(false);
-                        StartCoroutine(waitTillSearchAgain());
                     }
                     
                     _timeUntilLost = timeUntilLost;
@@ -180,15 +188,17 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (_inRange && !_touchedPlayer)
+        if (_inRange && !isStopped)
         {
-            agent.SetDestination(Player.instance.transform.position);
             _timeUntilLost -= Time.deltaTime;
+            agent.SetDestination(Player.instance.transform.position);
+
         }
         if (_timeUntilLost <= 0f && _inRange) //Aun no ha entrado a el if
         {
             agent.SetDestination(pathPoints[currentPoint].position);
             _inRange = false;
+            soundPlayed = false;
             return null;
         }
 
@@ -196,6 +206,15 @@ public class EnemyController : MonoBehaviour
         return null;
     }
 
+    IEnumerator enemyTePilla()
+    {
+        Debug.Log("te pille");
+        _timeUntilLost = 0;
+        isStopped = true;
+        agent.SetDestination(pathPoints[currentPoint].position);
+        yield return new WaitForSeconds(5f);
+        isStopped = false;
+    }
     private bool RaycastPlayer()
     {
         foreach (Transform eye in eyes)
@@ -228,13 +247,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    IEnumerator waitTillSearchAgain()
+    private void PlayGritoCuandoEncuentra()
     {
-        Debug.Log("Te pillé!");
-        _timeUntilLost = 0f;
-        _touchedPlayer = true;
-        PlayerStats.Instance.addToTimeMultiplier(0.1f);
-        yield return new WaitForSeconds(5f);
-        _touchedPlayer = false;
+        soundPlayed = true;
+        creepySounds.PlayOneShot(scream);
     }
 }

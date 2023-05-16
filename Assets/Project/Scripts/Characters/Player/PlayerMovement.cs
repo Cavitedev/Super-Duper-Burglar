@@ -75,6 +75,8 @@ namespace Project.Scripts
             
             if (moveValueInput != Vector2.zero)
             {
+
+                
                 Vector3 direction =
                     Player.instance.hmdTransform.TransformDirection(new Vector3(moveValueInput.x, 0,
                         moveValueInput.y)).normalized;

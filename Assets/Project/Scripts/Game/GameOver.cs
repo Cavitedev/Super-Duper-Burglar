@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Clock_System clock;
+
     public GameObject canvas;
     void Start()
     {
@@ -15,15 +15,14 @@ public class GameOver : MonoBehaviour
 
     public void gameOver()
     {
-        if (PlayerStats.Instance.TimeLeft <= 0)
-        {
-            canvas.SetActive(true);
-        }
+        Debug.Log("Game Over");
+        canvas.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    
+    public void Retry()
+    {
+        SceneManager.LoadScene("House2");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

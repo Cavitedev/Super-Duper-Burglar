@@ -47,7 +47,7 @@ public class Clock_System : MonoBehaviour
 
     public void UpdateMoney(int currentMoney)
     {
-        moneyEarnedText.text = $"{currentMoney}€";
+        moneyEarnedText.text = $"{currentMoney/100}€";
     }
 
     /*
