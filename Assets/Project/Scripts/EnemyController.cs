@@ -251,5 +251,6 @@ public class EnemyController : MonoBehaviour
     {
         soundPlayed = true;
         creepySounds.PlayOneShot(scream);
+        soundPlayed = false;
     }
 }

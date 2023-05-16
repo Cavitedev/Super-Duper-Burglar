@@ -75,9 +75,17 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void addToTimeMultiplier(float sumaCantidad)
+    public void addToTimeMultiplier()
     {
-        timeSpeedMulty += sumaCantidad;
+        StartCoroutine(timeGoesFaster());
+    }
+
+    public IEnumerator timeGoesFaster()
+    {
+        timeSpeedMulty = 1.3f;
+        yield return new WaitForSeconds(8f);
+        timeSpeedMulty = 1f;
+
     }
 
     public void AddToBounty(int bounty)
