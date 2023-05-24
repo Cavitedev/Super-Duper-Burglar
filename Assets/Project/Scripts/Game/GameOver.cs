@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameOver : MonoBehaviour
 {
 
     public GameObject canvas;
 
-    public Text score;
+    public TextMeshPro score;
 
     [SerializeField] public PlayerStats amount;
     void Start()
