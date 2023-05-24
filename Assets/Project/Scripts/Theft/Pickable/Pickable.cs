@@ -10,14 +10,15 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Interactable))]
 public class Pickable : MonoBehaviour
 {
-
     public UnityEvent onPick;
-    private AudioSource _pickau;
-    
+    [SerializeField] private AudioClip clip;
+
+
     public float pickSpeed = 1.5f;
     // Called every Update() while a Hand is hovering over this object
 
     private Collider _collider;
+    private AudioSource _pickau;
 
 
     private void Start()
@@ -32,15 +33,30 @@ public class Pickable : MonoBehaviour
         if (SteamVR_Input.GetStateDown("GrabPinch", handType))
         {
             Pick();
-            _pickau.Play();
+
             //Debug.Log("Pick");
         }
     }
 
     private void Pick()
     {
-        
+        GameObject sound = new GameObject("Sound")
+        {
+            transform =
+            {
+                position = transform.position
+            }
+        };
 
+        AudioSource audioSource = sound.AddComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.spatialBlend = 1f;
+        audioSource.Play();
+        Destroy(sound, clip.length);
+        
+        // _pickau.Play();
+        
+        
         StartCoroutine(MovePick());
 
     }
@@ -78,7 +94,4 @@ public class Pickable : MonoBehaviour
         Destroy(gameObject);
 
     }
-    
-    
-
 }

@@ -9,12 +9,12 @@ public class Score : MonoBehaviour
 
 
     [SerializeField] public PlayerStats amount;
-    public TextMeshPro score;
+    public TextMeshProUGUI score;
 
     // Start is called before the first frame update
     private void Update()
     {
-        score.text = PlayerStats.Instance.BountyAmount.ToString("f0") + "€";
+        score.text = (PlayerStats.Instance.BountyAmount / 100f).ToString("f0") + "€";
     }
 
 }

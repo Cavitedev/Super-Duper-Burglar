@@ -9,11 +9,7 @@ using TMPro;
 public class GameOver : MonoBehaviour
 {
     public GameObject canvas;
-
-    public TextMeshPro score;
-
-    [SerializeField] public PlayerStats amount;
-
+    
     void Start()
     {
         canvas.SetActive(false);
