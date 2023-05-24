@@ -75,6 +75,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void IncreaseTimeSpeed()
+    {
+        timeSpeedMulty = 2f;
+    }
+
+    public void DecreaseTimeSpeed()
+    {
+        timeSpeedMulty = 1f;
+    }
+    
     public void addToTimeMultiplier()
     {
         StartCoroutine(timeGoesFaster());

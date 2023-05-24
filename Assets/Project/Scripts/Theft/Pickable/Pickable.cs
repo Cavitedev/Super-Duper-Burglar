@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,17 +12,27 @@ public class Pickable : MonoBehaviour
 {
 
     public UnityEvent onPick;
-    public AudioSource pickau;
+    private AudioSource _pickau;
     
     public float pickSpeed = 1.5f;
     // Called every Update() while a Hand is hovering over this object
+
+    private Collider _collider;
+
+
+    private void Start()
+    {
+        _collider = GetComponent<Collider>();
+        _pickau = GetComponent<AudioSource>();
+    }
+
     private void HandHoverUpdate(Hand hand)
     {
         SteamVR_Input_Sources handType = SteamVR_Input_Sources.Any;
         if (SteamVR_Input.GetStateDown("GrabPinch", handType))
         {
             Pick();
-            pickau.Play();
+            _pickau.Play();
             //Debug.Log("Pick");
         }
     }
@@ -44,12 +55,13 @@ public class Pickable : MonoBehaviour
         Vector3 playerPos = playerHeadTransform.position;
         Vector3 dir = (playerPos - transform.position).normalized;
         Vector3 goal;
+        _collider.enabled = false;
         do
         {
 
 
             
-
+        
             goal = playerPos + dir * overshootDist + Vector3.down * 0.5f + playerHeadTransform.right * 0.3f ;
             Vector3 pos = transform.position;
 

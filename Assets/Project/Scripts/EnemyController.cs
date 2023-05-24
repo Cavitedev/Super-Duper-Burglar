@@ -210,10 +210,12 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("te pille");
         _timeUntilLost = 0;
+        PlayerStats.Instance.IncreaseTimeSpeed();
         isStopped = true;
         agent.SetDestination(pathPoints[currentPoint].position);
         yield return new WaitForSeconds(5f);
         isStopped = false;
+        PlayerStats.Instance.DecreaseTimeSpeed();
     }
     private bool RaycastPlayer()
     {

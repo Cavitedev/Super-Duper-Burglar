@@ -7,7 +7,7 @@ using System;
 public class Clock_System : MonoBehaviour
 {
 
-
+    
 
 
     [SerializeField] TextMeshPro timeLeftText;
