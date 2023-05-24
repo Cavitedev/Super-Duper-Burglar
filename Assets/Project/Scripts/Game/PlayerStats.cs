@@ -7,13 +7,13 @@ using UnityEngine.Serialization;
 
 public class PlayerStats : MonoBehaviour
 {
-
     [SerializeField] private bool timeActive = true;
 
     public delegate void OnGameOver();
 
     public OnGameOver onGameOver;
-    
+    private bool _isGameOver;
+
     // TIME
     private float _timeLeft;
     public float timeSpeedMulty = 1f;
@@ -28,19 +28,19 @@ public class PlayerStats : MonoBehaviour
             Clock_System.Instance.UpdateTime(_timeLeft);
         }
     }
-    
+
     // MONEY
-    private int _bountyAmount = 0;
+    private int _bountyAmount = 100;
     public int BountyAmount
     {
         get { return _bountyAmount; }
         set
         {
-            _bountyAmount = value; 
+            _bountyAmount = value;
             Clock_System.Instance.UpdateMoney(_bountyAmount);
         }
     }
-    
+
     private int _bountyCount = 0;
     public int BountyCount => _bountyCount;
 
@@ -54,12 +54,11 @@ public class PlayerStats : MonoBehaviour
         TimeLeft = totalTime;
         BountyAmount = _bountyAmount;
     }
-    
+
     private void Awake()
     {
         _instance = this;
     }
-
 
 
     private void Update()
@@ -67,7 +66,11 @@ public class PlayerStats : MonoBehaviour
         if (TimeLeft <= 0f)
         {
             TimeLeft = 0;
-            onGameOver?.Invoke();
+            if (!_isGameOver)
+            {
+                onGameOver?.Invoke();
+                _isGameOver = true;
+            }
         }
         else
         {
@@ -84,7 +87,7 @@ public class PlayerStats : MonoBehaviour
     {
         timeSpeedMulty = 1f;
     }
-    
+
     public void addToTimeMultiplier()
     {
         StartCoroutine(timeGoesFaster());
@@ -95,7 +98,6 @@ public class PlayerStats : MonoBehaviour
         timeSpeedMulty = 1.3f;
         yield return new WaitForSeconds(8f);
         timeSpeedMulty = 1f;
-
     }
 
     public void AddToBounty(int bounty)
@@ -103,7 +105,7 @@ public class PlayerStats : MonoBehaviour
         BountyAmount += bounty;
         _bountyCount += 1;
 
-        
+
         Debug.Log($"Current Bounty: <color=green>{bounty}</color>");
     }
 
@@ -111,6 +113,4 @@ public class PlayerStats : MonoBehaviour
     {
         onGameOver();
     }
-
-    
 }

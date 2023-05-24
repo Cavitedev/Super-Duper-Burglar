@@ -4,11 +4,11 @@ public class CanvasVR : MonoBehaviour
 {
     private void OnEnable()
     {
-        LaserUIHandler.Instance.enabled = true;
+        LaserUIHandler.Instance.Enabled = true;
     }
     
     private void OnDisable()
     {
-        LaserUIHandler.Instance.enabled = false;
+        LaserUIHandler.Instance.Enabled = false;
     }
 }

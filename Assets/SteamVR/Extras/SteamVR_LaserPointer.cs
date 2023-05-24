@@ -101,7 +101,7 @@ namespace Valve.VR.Extras
 
             Ray raycast = new Ray(transform.position, transform.forward);
             RaycastHit hit;
-            bool bHit = Physics.Raycast(raycast, out hit);
+            bool bHit = Physics.Raycast(raycast, out hit, 20, 32);
 
             if (previousContact && previousContact != hit.transform)
             {

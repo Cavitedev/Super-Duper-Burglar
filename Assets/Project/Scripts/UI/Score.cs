@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     private void Update()
     {
-        score.text = PlayerStats.Instance.BountyAmount.ToString("f0");
+        score.text = PlayerStats.Instance.BountyAmount.ToString("f0") + "€";
     }
 
 }

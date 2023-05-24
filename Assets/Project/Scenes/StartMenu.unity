@@ -476,7 +476,6 @@ GameObject:
   - component: {fileID: 638577442}
   - component: {fileID: 638577441}
   - component: {fileID: 638577440}
-  - component: {fileID: 638577439}
   - component: {fileID: 638577445}
   m_Layer: 5
   m_Name: Canvas
@@ -485,18 +484,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &638577439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638577438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 186756f9bec439047a7e37e33d3860b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &638577440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 306c8f2f330b55243a0c7b0e7d5b466c, type: 3}
+    - target: {fileID: 1631688102, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
+      propertyPath: _enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4509588483158919676, guid: b3aa6b96a9ab07f4b9d48833cb545155, type: 3}
       propertyPath: m_RootOrder
       value: 1
