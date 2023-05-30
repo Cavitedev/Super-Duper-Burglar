@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour
 {
     public GameObject canvas;
     
+
+    
     void Start()
     {
         canvas.SetActive(false);
@@ -28,6 +30,7 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("House2");
     }
 }
